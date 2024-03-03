@@ -55,24 +55,20 @@ public class Register extends javax.swing.JFrame {
 
         nameLogo.setBackground(new java.awt.Color(255, 255, 255));
         nameLogo.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        nameLogo.setForeground(new java.awt.Color(0, 0, 0));
         nameLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/favicon.png"))); // NOI18N
         nameLogo.setText("BG'SFDI");
         bgRegister.add(nameLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         registerText.setBackground(new java.awt.Color(255, 255, 255));
         registerText.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        registerText.setForeground(new java.awt.Color(0, 0, 0));
         registerText.setText("REGISTRARSE");
         bgRegister.add(registerText, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         LogoAdjuntLabel.setBackground(new java.awt.Color(255, 255, 255));
         LogoAdjuntLabel.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        LogoAdjuntLabel.setForeground(new java.awt.Color(0, 0, 0));
         LogoAdjuntLabel.setText("LOGO");
         bgRegister.add(LogoAdjuntLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 110, -1));
 
-        nameEmpresaTextField.setBackground(new java.awt.Color(255, 255, 255));
         nameEmpresaTextField.setForeground(new java.awt.Color(204, 204, 204));
         nameEmpresaTextField.setText("Ingrese el nombre de la empresa");
         nameEmpresaTextField.setBorder(null);
@@ -80,17 +76,14 @@ public class Register extends javax.swing.JFrame {
 
         nameUserLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         nameUserLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        nameUserLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
         nameUserLabelRegister.setText("NOMBRE DE USUARIO");
         bgRegister.add(nameUserLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         correoUserLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         correoUserLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        correoUserLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
         correoUserLabelRegister.setText("CORREO");
         bgRegister.add(correoUserLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
-        nameUserTextFieldRegister.setBackground(new java.awt.Color(255, 255, 255));
         nameUserTextFieldRegister.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         nameUserTextFieldRegister.setForeground(new java.awt.Color(204, 204, 204));
         nameUserTextFieldRegister.setText("Registre su nombre de usuario");
@@ -102,7 +95,6 @@ public class Register extends javax.swing.JFrame {
         });
         bgRegister.add(nameUserTextFieldRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 410, 30));
 
-        correoUserTextFieldRegister.setBackground(new java.awt.Color(255, 255, 255));
         correoUserTextFieldRegister.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         correoUserTextFieldRegister.setForeground(new java.awt.Color(204, 204, 204));
         correoUserTextFieldRegister.setText("Ingrese su correo electronico");
@@ -116,17 +108,14 @@ public class Register extends javax.swing.JFrame {
 
         passwordLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         passwordLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        passwordLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
         passwordLabelRegister.setText("CONTRASEÑA");
         bgRegister.add(passwordLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         empresaLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         empresaLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        empresaLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
         empresaLabelRegister.setText("EMPRESA");
         bgRegister.add(empresaLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        passwordTextFieldRegister.setBackground(new java.awt.Color(255, 255, 255));
         passwordTextFieldRegister.setForeground(new java.awt.Color(204, 204, 204));
         passwordTextFieldRegister.setText("****************");
         passwordTextFieldRegister.setBorder(null);
@@ -237,14 +226,6 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordTextFieldRegisterActionPerformed
 
-    private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registerButtonMouseClicked
-
-    private void registerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registerButtonMouseEntered
-
     private void adjuntarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adjuntarBtnMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_adjuntarBtnMouseClicked
@@ -256,6 +237,14 @@ public class Register extends javax.swing.JFrame {
     private void correoUserTextFieldRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoUserTextFieldRegisterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_correoUserTextFieldRegisterActionPerformed
+
+    private void registerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registerButtonMouseEntered
+
+    private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registerButtonMouseClicked
 
     /**
      * @param args the command line arguments

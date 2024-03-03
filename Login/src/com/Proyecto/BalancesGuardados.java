@@ -5,7 +5,16 @@ import java.awt.Color;
 public class BalancesGuardados extends javax.swing.JFrame {
 
 int xMouse, yMouse;
+
+    int red = 0;
+    int green = 134;
+    int blue = 190;
     
+    int rojo = 0;
+    int verde = 83;
+    int azul = 117;    
+
+
     public BalancesGuardados() {
         initComponents();
     }
@@ -19,7 +28,6 @@ int xMouse, yMouse;
         PanelCerrar = new javax.swing.JPanel();
         BotonCerrar = new javax.swing.JLabel();
         TituloBalance = new javax.swing.JLabel();
-        Home = new javax.swing.JButton();
         ArchivosBalances = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,7 +53,7 @@ int xMouse, yMouse;
 
         BotonCerrar.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         BotonCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BotonCerrar.setText("X");
+        BotonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/arrow.png"))); // NOI18N
         BotonCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonCerrar.setPreferredSize(new java.awt.Dimension(40, 40));
         BotonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -75,49 +83,24 @@ int xMouse, yMouse;
         TituloBalance.setForeground(new java.awt.Color(255, 255, 255));
         TituloBalance.setText("Balances Guardados");
 
-        Home.setBackground(new java.awt.Color(78, 184, 223));
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/home.png"))); // NOI18N
-        Home.setMaximumSize(new java.awt.Dimension(24, 24));
-        Home.setMinimumSize(new java.awt.Dimension(24, 24));
-        Home.setPreferredSize(new java.awt.Dimension(24, 24));
-        Home.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                HomeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                HomeMouseExited(evt);
-            }
-        });
-        Home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HomeActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout PanelSuperiorTituloLayout = new javax.swing.GroupLayout(PanelSuperiorTitulo);
         PanelSuperiorTitulo.setLayout(PanelSuperiorTituloLayout);
         PanelSuperiorTituloLayout.setHorizontalGroup(
             PanelSuperiorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSuperiorTituloLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(TituloBalance)
-                .addGap(108, 108, 108))
             .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
                 .addComponent(PanelCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 773, Short.MAX_VALUE))
+            .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addComponent(TituloBalance)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelSuperiorTituloLayout.setVerticalGroup(
             PanelSuperiorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
                 .addComponent(PanelCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addGroup(PanelSuperiorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TituloBalance)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSuperiorTituloLayout.createSequentialGroup()
-                        .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)))
+                .addComponent(TituloBalance)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
@@ -160,11 +143,13 @@ int xMouse, yMouse;
     }//GEN-LAST:event_PanelSuperiorTituloMouseDragged
 
     private void BotonCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCerrarMouseClicked
-      System.exit(0);
+        Inicio newframe = new Inicio();
+        newframe.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonCerrarMouseClicked
 
     private void BotonCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCerrarMouseEntered
-        PanelCerrar.setBackground(Color.red);
+        PanelCerrar.setBackground(Color.DARK_GRAY);
     }//GEN-LAST:event_BotonCerrarMouseEntered
 
     private void BotonCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCerrarMouseExited
@@ -175,20 +160,6 @@ int xMouse, yMouse;
      xMouse = evt.getX();
      yMouse = evt.getY();
     }//GEN-LAST:event_PanelSuperiorTituloMousePressed
-
-    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
-        Inicio newframe = new Inicio();
-        newframe.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_HomeActionPerformed
-
-    private void HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseEntered
-        Home.setBackground(Color.DARK_GRAY);
-    }//GEN-LAST:event_HomeMouseEntered
-
-    private void HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseExited
-        Home.setBackground(Color.CYAN);
-    }//GEN-LAST:event_HomeMouseExited
 
     /**
      * @param args the command line arguments
@@ -216,6 +187,7 @@ int xMouse, yMouse;
             java.util.logging.Logger.getLogger(BalancesGuardados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -228,7 +200,6 @@ int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ArchivosBalances;
     private javax.swing.JLabel BotonCerrar;
-    private javax.swing.JButton Home;
     private javax.swing.JPanel PanelBase;
     private javax.swing.JPanel PanelCerrar;
     private javax.swing.JPanel PanelSuperiorTitulo;

@@ -4,8 +4,14 @@ import java.awt.Color;
 
 public class Inicio extends javax.swing.JFrame {
 
-int xMouse, yMouse;
+    int xMouse, yMouse;
+    int red = 0;
+    int green = 134;
+    int blue = 190;
     
+    int rojo = 0;
+    int verde = 83;
+    int azul = 117;
     
     public Inicio() {
         initComponents();
@@ -17,8 +23,9 @@ int xMouse, yMouse;
         PanelBase = new javax.swing.JPanel();
         PanelSuperior = new javax.swing.JPanel();
         PanelSesion = new javax.swing.JPanel();
-        BotonSesion = new javax.swing.JButton();
-        Home = new javax.swing.JButton();
+        Logo = new javax.swing.JLabel();
+        NombreUsuario = new javax.swing.JLabel();
+        DefaultLogo = new javax.swing.JLabel();
         CerrarPanel = new javax.swing.JPanel();
         CerrarBoton = new javax.swing.JLabel();
         TextoNuevoBG = new java.awt.Label();
@@ -30,10 +37,10 @@ int xMouse, yMouse;
         setUndecorated(true);
         setResizable(false);
 
-        PanelBase.setBackground(new java.awt.Color(78, 184, 223));
+        PanelBase.setBackground(new java.awt.Color(255, 255, 255));
         PanelBase.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        PanelSuperior.setBackground(new java.awt.Color(0, 92, 139));
+        PanelSuperior.setBackground(new java.awt.Color(78, 184, 223));
         PanelSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 PanelSuperiorMouseDragged(evt);
@@ -45,52 +52,39 @@ int xMouse, yMouse;
             }
         });
 
-        PanelSesion.setBackground(new java.awt.Color(0, 134, 190));
+        PanelSesion.setBackground(new java.awt.Color(255, 255, 255));
         PanelSesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        BotonSesion.setBackground(new java.awt.Color(153, 153, 153));
-        BotonSesion.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        BotonSesion.setForeground(new java.awt.Color(255, 255, 255));
-        BotonSesion.setText("Iniciar Sesion");
-        BotonSesion.setBorder(null);
-        BotonSesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BotonSesionMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BotonSesionMouseExited(evt);
-            }
-        });
-        BotonSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonSesionActionPerformed(evt);
-            }
-        });
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/favicon.png"))); // NOI18N
+
+        DefaultLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/logo (1).png"))); // NOI18N
 
         javax.swing.GroupLayout PanelSesionLayout = new javax.swing.GroupLayout(PanelSesion);
         PanelSesion.setLayout(PanelSesionLayout);
         PanelSesionLayout.setHorizontalGroup(
             PanelSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSesionLayout.createSequentialGroup()
-                .addComponent(BotonSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(Logo)
+                .addGap(29, 29, 29)
+                .addComponent(NombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(DefaultLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         PanelSesionLayout.setVerticalGroup(
             PanelSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BotonSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+            .addGroup(PanelSesionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(DefaultLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSesionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Logo)
+                .addGap(24, 24, 24))
         );
-
-        Home.setBackground(new java.awt.Color(78, 184, 223));
-        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/home.png"))); // NOI18N
-        Home.setBorder(null);
-        Home.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                HomeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                HomeMouseExited(evt);
-            }
-        });
 
         CerrarPanel.setPreferredSize(new java.awt.Dimension(40, 40));
 
@@ -128,11 +122,9 @@ int xMouse, yMouse;
         PanelSuperiorLayout.setHorizontalGroup(
             PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSuperiorLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(88, 88, 88)
                 .addComponent(PanelSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(PanelSuperiorLayout.createSequentialGroup()
                 .addComponent(CerrarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -141,15 +133,9 @@ int xMouse, yMouse;
             PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSuperiorLayout.createSequentialGroup()
                 .addComponent(CerrarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(PanelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelSuperiorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PanelSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45))
-                    .addGroup(PanelSuperiorLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(PanelSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
 
         TextoNuevoBG.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
@@ -158,11 +144,13 @@ int xMouse, yMouse;
         TextoBGGuardados.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
         TextoBGGuardados.setText("Balances General Guardados");
 
-        BotonNuevo.setBackground(new java.awt.Color(78, 184, 223));
         BotonNuevo.setForeground(new java.awt.Color(153, 153, 153));
         BotonNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/document2.png"))); // NOI18N
         BotonNuevo.setBorder(null);
         BotonNuevo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonNuevoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BotonNuevoMouseEntered(evt);
             }
@@ -176,11 +164,13 @@ int xMouse, yMouse;
             }
         });
 
-        BotonArchivo.setBackground(new java.awt.Color(78, 184, 223));
         BotonArchivo.setForeground(new java.awt.Color(153, 153, 153));
         BotonArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/folder.png"))); // NOI18N
         BotonArchivo.setBorder(null);
         BotonArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonArchivoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 BotonArchivoMouseEntered(evt);
             }
@@ -207,7 +197,7 @@ int xMouse, yMouse;
                     .addGroup(PanelBaseLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(BotonNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBaseLayout.createSequentialGroup()
                         .addComponent(BotonArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,10 +209,10 @@ int xMouse, yMouse;
         PanelBaseLayout.setVerticalGroup(
             PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBaseLayout.createSequentialGroup()
-                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                    .addComponent(BotonNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                     .addComponent(BotonArchivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,47 +273,33 @@ int xMouse, yMouse;
         CerrarPanel.setBackground(Color.white);
     }//GEN-LAST:event_CerrarBotonMouseExited
 
-    private void HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseEntered
-        Home.setBackground(Color.DARK_GRAY);
-    }//GEN-LAST:event_HomeMouseEntered
-
-    private void HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseExited
-        Home.setBackground(Color.CYAN);
-    }//GEN-LAST:event_HomeMouseExited
-
     private void BotonNuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonNuevoMouseEntered
-        BotonNuevo.setBackground(Color.DARK_GRAY);
+    Color customColor = new Color(red, green, blue);
+        BotonNuevo.setBackground(customColor);
     }//GEN-LAST:event_BotonNuevoMouseEntered
 
     private void BotonNuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonNuevoMouseExited
-        BotonNuevo.setBackground(Color.CYAN);
+        BotonNuevo.setBackground(Color.WHITE);
     }//GEN-LAST:event_BotonNuevoMouseExited
 
     private void BotonArchivoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonArchivoMouseEntered
-        BotonArchivo.setBackground(Color.DARK_GRAY);
+    Color customColor = new Color(red, green, blue);
+        BotonArchivo.setBackground(customColor);
     }//GEN-LAST:event_BotonArchivoMouseEntered
 
     private void BotonArchivoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonArchivoMouseExited
-        BotonArchivo.setBackground(Color.CYAN);
+        BotonArchivo.setBackground(Color.WHITE);
     }//GEN-LAST:event_BotonArchivoMouseExited
 
-    private void BotonSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSesionActionPerformed
+    private void BotonNuevoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonNuevoMouseClicked
+     
+    }//GEN-LAST:event_BotonNuevoMouseClicked
+
+    private void BotonArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonArchivoMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotonSesionActionPerformed
+    }//GEN-LAST:event_BotonArchivoMouseClicked
 
-    private void BotonSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSesionMouseEntered
-      PanelSesion.setBackground(Color.DARK_GRAY);
-      BotonSesion.setBackground(Color.DARK_GRAY);
-    }//GEN-LAST:event_BotonSesionMouseEntered
 
-    private void BotonSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSesionMouseExited
-       PanelSesion.setBackground(Color.GRAY);
-       BotonSesion.setBackground(Color.GRAY);
-    }//GEN-LAST:event_BotonSesionMouseExited
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -347,6 +323,7 @@ int xMouse, yMouse;
             java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -359,10 +336,11 @@ int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonArchivo;
     private javax.swing.JButton BotonNuevo;
-    private javax.swing.JButton BotonSesion;
     private javax.swing.JLabel CerrarBoton;
     private javax.swing.JPanel CerrarPanel;
-    private javax.swing.JButton Home;
+    private javax.swing.JLabel DefaultLogo;
+    private javax.swing.JLabel Logo;
+    private javax.swing.JLabel NombreUsuario;
     private javax.swing.JPanel PanelBase;
     private javax.swing.JPanel PanelSesion;
     private javax.swing.JPanel PanelSuperior;
