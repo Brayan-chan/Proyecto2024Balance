@@ -111,3 +111,5 @@ Autorizado por: Sebastian (Gerente general)		Elaborado por: Eligio (Contador gen
 
 
 </br>
+<hr>
+
