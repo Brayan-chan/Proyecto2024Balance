@@ -96,6 +96,7 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setText("Usuario");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 100, 50));
 
+        userTxt.setBackground(new java.awt.Color(255, 255, 255));
         userTxt.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         userTxt.setBorder(null);
         userTxt.addMouseListener(new java.awt.event.MouseAdapter() {

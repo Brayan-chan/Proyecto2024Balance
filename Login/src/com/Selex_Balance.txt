@@ -1,0 +1,44 @@
+Selex Inc
+Balance general del 1 de  enero de 2000 al 31 de enero de 2000
+
+Activo Circulante
+Caja $10.0
+Banco $20.0
+Inversiones temporales $30.0
+Mercancias $40.0
+Clientes $50.0
+Documentos por cobrar $60.0
+Deudores diversos $70.0
+Anticipo a proveedores $80.0
+Total de circulante: $360.0
+Activo Fijo
+Terrenos $90.0
+Edificios $100.0
+Mobiliario y equipo $1.0
+Equipo de computo $2.0
+Equipo de entrega y reparto $3.0
+Depositos en garantia $4.0
+Inversiones permanentes $5.0
+Documentos por cobrar a largo plazo $6.0
+Total de fijo: $211.0
+Activo Diferido
+Gastos de investigación y desarrollo $7.0
+Gastos en etapas preoperativas de organización y administración $10.0
+Gastos de mercadotecnia $20.0
+Gastos de organización  $30.0
+Gastos de instalación  $40.0
+Papelería y útiles $50.0
+Total de diferido: $167.0
+Total de activo: $738.0
+Pasivo Flotante
+Proveedores $10.0
+Documentos por pagar $20.0
+Acreedores diversos $30.0
+Total de flotante: $60.0
+Pasivo Fijo
+Total de fijo: $0.0
+Pasivo Diferido
+Total de diferido: $0.0
+Total de pasivo: $60.0
+Total capital: $678.0
+Autorizado por: Sebastian (Gerente general)		Elaborado por: Eligio (Contador general)
