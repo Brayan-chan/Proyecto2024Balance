@@ -1,11 +1,21 @@
-package com.register;
+package com.Proyecto;
 
 import java.awt.Color;
 
 public class Register extends javax.swing.JFrame {
-              int xMouse, yMouse;
+    int xMouse, yMouse;
+    
+    int red = 0;
+    int green = 134;
+    int blue = 190;
+    
+    int rojo = 0;
+    int verde = 83;
+    int azul = 117;
+                     
     public Register() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -19,20 +29,20 @@ public class Register extends javax.swing.JFrame {
         nameLogo = new javax.swing.JLabel();
         registerText = new javax.swing.JLabel();
         LogoAdjuntLabel = new javax.swing.JLabel();
-        nameEmpresaTextField = new javax.swing.JTextField();
+        empresaTxt = new javax.swing.JTextField();
         nameUserLabelRegister = new javax.swing.JLabel();
         correoUserLabelRegister = new javax.swing.JLabel();
-        nameUserTextFieldRegister = new javax.swing.JTextField();
-        correoUserTextFieldRegister = new javax.swing.JTextField();
+        nameuserTxt = new javax.swing.JTextField();
+        correoTxt = new javax.swing.JTextField();
         passwordLabelRegister = new javax.swing.JLabel();
         empresaLabelRegister = new javax.swing.JLabel();
-        passwordTextFieldRegister = new javax.swing.JPasswordField();
+        contraTxt = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         panelRegisterButton = new javax.swing.JPanel();
-        registerButton = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         panelAdjuntarButton = new javax.swing.JPanel();
         adjuntarBtn = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -43,6 +53,7 @@ public class Register extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bgRegister.setBackground(new java.awt.Color(255, 255, 255));
         bgRegister.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -63,87 +74,93 @@ public class Register extends javax.swing.JFrame {
 
         nameLogo.setBackground(new java.awt.Color(255, 255, 255));
         nameLogo.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        nameLogo.setForeground(new java.awt.Color(0, 0, 0));
         nameLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/favicon.png"))); // NOI18N
         nameLogo.setText("BG'SFDI");
         bgRegister.add(nameLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         registerText.setBackground(new java.awt.Color(255, 255, 255));
         registerText.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        registerText.setForeground(new java.awt.Color(0, 0, 0));
         registerText.setText("REGISTRARSE");
         bgRegister.add(registerText, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         LogoAdjuntLabel.setBackground(new java.awt.Color(255, 255, 255));
         LogoAdjuntLabel.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        LogoAdjuntLabel.setForeground(new java.awt.Color(0, 0, 0));
         LogoAdjuntLabel.setText("LOGO");
-        bgRegister.add(LogoAdjuntLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 110, -1));
+        bgRegister.add(LogoAdjuntLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 50, -1));
 
-        nameEmpresaTextField.setBackground(new java.awt.Color(255, 255, 255));
-        nameEmpresaTextField.setForeground(new java.awt.Color(204, 204, 204));
-        nameEmpresaTextField.setText("Ingrese el nombre de la empresa");
-        nameEmpresaTextField.setBorder(null);
-        bgRegister.add(nameEmpresaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 410, 30));
+        empresaTxt.setBorder(null);
+        empresaTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                empresaTxtMousePressed(evt);
+            }
+        });
+        empresaTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empresaTxtActionPerformed(evt);
+            }
+        });
+        bgRegister.add(empresaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 410, 30));
 
         nameUserLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         nameUserLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        nameUserLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
         nameUserLabelRegister.setText("NOMBRE DE USUARIO");
         bgRegister.add(nameUserLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         correoUserLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         correoUserLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        correoUserLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
         correoUserLabelRegister.setText("CORREO");
         bgRegister.add(correoUserLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
-        nameUserTextFieldRegister.setBackground(new java.awt.Color(255, 255, 255));
-        nameUserTextFieldRegister.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        nameUserTextFieldRegister.setForeground(new java.awt.Color(204, 204, 204));
-        nameUserTextFieldRegister.setText("Registre su nombre de usuario");
-        nameUserTextFieldRegister.setBorder(null);
-        nameUserTextFieldRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameUserTextFieldRegisterActionPerformed(evt);
+        nameuserTxt.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        nameuserTxt.setBorder(null);
+        nameuserTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nameuserTxtMousePressed(evt);
             }
         });
-        bgRegister.add(nameUserTextFieldRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 410, 30));
+        nameuserTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameuserTxtActionPerformed(evt);
+            }
+        });
+        bgRegister.add(nameuserTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 410, 30));
 
-        correoUserTextFieldRegister.setBackground(new java.awt.Color(255, 255, 255));
-        correoUserTextFieldRegister.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        correoUserTextFieldRegister.setForeground(new java.awt.Color(204, 204, 204));
-        correoUserTextFieldRegister.setText("Ingrese su correo electronico");
-        correoUserTextFieldRegister.setBorder(null);
-        correoUserTextFieldRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                correoUserTextFieldRegisterActionPerformed(evt);
+        correoTxt.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        correoTxt.setBorder(null);
+        correoTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                correoTxtMousePressed(evt);
             }
         });
-        bgRegister.add(correoUserTextFieldRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 410, 30));
+        correoTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correoTxtActionPerformed(evt);
+            }
+        });
+        bgRegister.add(correoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 410, 30));
 
         passwordLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         passwordLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        passwordLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
-        passwordLabelRegister.setText("CONTRASEÃ‘A");
+        passwordLabelRegister.setText("CONTRASEÑA");
         bgRegister.add(passwordLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         empresaLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
         empresaLabelRegister.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        empresaLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
         empresaLabelRegister.setText("EMPRESA");
         bgRegister.add(empresaLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        passwordTextFieldRegister.setBackground(new java.awt.Color(255, 255, 255));
-        passwordTextFieldRegister.setForeground(new java.awt.Color(204, 204, 204));
-        passwordTextFieldRegister.setText("****************");
-        passwordTextFieldRegister.setBorder(null);
-        passwordTextFieldRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordTextFieldRegisterActionPerformed(evt);
+        contraTxt.setBorder(null);
+        contraTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                contraTxtMousePressed(evt);
             }
         });
-        bgRegister.add(passwordTextFieldRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 410, 30));
+        contraTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraTxtActionPerformed(evt);
+            }
+        });
+        bgRegister.add(contraTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 410, 30));
         bgRegister.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 410, 20));
         bgRegister.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 410, 10));
         bgRegister.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 410, 10));
@@ -152,18 +169,22 @@ public class Register extends javax.swing.JFrame {
         panelRegisterButton.setBackground(new java.awt.Color(0, 134, 190));
         panelRegisterButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        registerButton.setBackground(new java.awt.Color(0, 0, 0));
-        registerButton.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
-        registerButton.setForeground(new java.awt.Color(255, 255, 255));
-        registerButton.setText("REGISTRAR");
-        registerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        registerButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                registerButtonMouseClicked(evt);
-            }
+        jButton1.setBackground(new java.awt.Color(0, 134, 190));
+        jButton1.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("REGISTRAR");
+        jButton1.setBorder(null);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                registerButtonMouseEntered(evt);
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -171,20 +192,14 @@ public class Register extends javax.swing.JFrame {
         panelRegisterButton.setLayout(panelRegisterButtonLayout);
         panelRegisterButtonLayout.setHorizontalGroup(
             panelRegisterButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRegisterButtonLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(registerButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         panelRegisterButtonLayout.setVerticalGroup(
             panelRegisterButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRegisterButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(registerButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
-        bgRegister.add(panelRegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 110, -1));
+        bgRegister.add(panelRegisterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 100, -1));
 
         panelAdjuntarButton.setBackground(new java.awt.Color(0, 134, 190));
         panelAdjuntarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -208,20 +223,20 @@ public class Register extends javax.swing.JFrame {
         panelAdjuntarButton.setLayout(panelAdjuntarButtonLayout);
         panelAdjuntarButtonLayout.setHorizontalGroup(
             panelAdjuntarButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAdjuntarButtonLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAdjuntarButtonLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(adjuntarBtn)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
         panelAdjuntarButtonLayout.setVerticalGroup(
             panelAdjuntarButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAdjuntarButtonLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(adjuntarBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        bgRegister.add(panelAdjuntarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 110, 40));
+        bgRegister.add(panelAdjuntarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 110, 40));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -238,8 +253,7 @@ public class Register extends javax.swing.JFrame {
         exitBtn.setBackground(new java.awt.Color(255, 255, 255));
 
         exitTxt.setFont(new java.awt.Font("Roboto Light", 1, 36)); // NOI18N
-        exitTxt.setForeground(new java.awt.Color(0, 0, 0));
-        exitTxt.setText("X");
+        exitTxt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/arrow.png"))); // NOI18N
         exitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitTxtMouseClicked(evt);
@@ -256,14 +270,17 @@ public class Register extends javax.swing.JFrame {
         exitBtn.setLayout(exitBtnLayout);
         exitBtnLayout.setHorizontalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(exitBtnLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exitTxt)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         exitBtnLayout.setVerticalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -272,7 +289,7 @@ public class Register extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 765, Short.MAX_VALUE))
+                .addGap(0, 764, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,35 +300,18 @@ public class Register extends javax.swing.JFrame {
 
         bgRegister.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(bgRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nameUserTextFieldRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameUserTextFieldRegisterActionPerformed
+    private void nameuserTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameuserTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameUserTextFieldRegisterActionPerformed
+    }//GEN-LAST:event_nameuserTxtActionPerformed
 
-    private void passwordTextFieldRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldRegisterActionPerformed
+    private void contraTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordTextFieldRegisterActionPerformed
-
-    private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registerButtonMouseClicked
-
-    private void registerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registerButtonMouseEntered
+    }//GEN-LAST:event_contraTxtActionPerformed
 
     private void adjuntarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adjuntarBtnMouseClicked
         // TODO add your handling code here:
@@ -321,9 +321,9 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adjuntarBtnMouseEntered
 
-    private void correoUserTextFieldRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoUserTextFieldRegisterActionPerformed
+    private void correoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_correoUserTextFieldRegisterActionPerformed
+    }//GEN-LAST:event_correoTxtActionPerformed
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
         xMouse = evt.getX();
@@ -337,18 +337,56 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
-          System.exit(0);
+        Login newframe = new Login();
+        newframe.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_exitTxtMouseClicked
 
     private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered
-        exitBtn.setBackground(Color.red);
-        exitTxt.setForeground(Color.white);
+        exitBtn.setBackground(Color.GRAY);
+        exitTxt.setForeground(Color.GRAY);
     }//GEN-LAST:event_exitTxtMouseEntered
 
     private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
        exitBtn.setBackground(Color.white);
         exitTxt.setForeground(Color.black);
     }//GEN-LAST:event_exitTxtMouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Login newframe = new Login();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void correoTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_correoTxtMousePressed
+
+    }//GEN-LAST:event_correoTxtMousePressed
+
+    private void nameuserTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameuserTxtMousePressed
+   
+    }//GEN-LAST:event_nameuserTxtMousePressed
+
+    private void contraTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contraTxtMousePressed
+
+    }//GEN-LAST:event_contraTxtMousePressed
+
+    private void empresaTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empresaTxtMousePressed
+
+    }//GEN-LAST:event_empresaTxtMousePressed
+
+    private void empresaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empresaTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_empresaTxtActionPerformed
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+    Color customColor = new Color(rojo, verde, azul);
+        jButton1.setBackground(customColor);
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        Color customColor = new Color(red, green, blue);
+        jButton1.setBackground(customColor);
+    }//GEN-LAST:event_jButton1MouseExited
 
     /**
      * @param args the command line arguments
@@ -391,27 +429,27 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel adjuntarBtn;
     private javax.swing.JPanel bgRegister;
     private javax.swing.JLabel citybg;
+    private javax.swing.JPasswordField contraTxt;
+    private javax.swing.JTextField correoTxt;
     private javax.swing.JLabel correoUserLabelRegister;
-    private javax.swing.JTextField correoUserTextFieldRegister;
     private javax.swing.JLabel empresaLabelRegister;
+    private javax.swing.JTextField empresaTxt;
     private javax.swing.JLabel empreseName;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel logo;
-    private javax.swing.JTextField nameEmpresaTextField;
     private javax.swing.JLabel nameLogo;
     private javax.swing.JLabel nameUserLabelRegister;
-    private javax.swing.JTextField nameUserTextFieldRegister;
+    private javax.swing.JTextField nameuserTxt;
     private javax.swing.JPanel panelAdjuntarButton;
     private javax.swing.JPanel panelRegisterButton;
     private javax.swing.JLabel passwordLabelRegister;
-    private javax.swing.JPasswordField passwordTextFieldRegister;
-    private javax.swing.JLabel registerButton;
     private javax.swing.JLabel registerText;
     // End of variables declaration//GEN-END:variables
 }
