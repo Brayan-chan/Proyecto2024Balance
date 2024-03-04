@@ -108,3 +108,6 @@ Total de pasivo: $60.0
 Total capital: $678.0
 Autorizado por: Sebastian (Gerente general)		Elaborado por: Eligio (Contador general)
 ```
+
+
+</br>
