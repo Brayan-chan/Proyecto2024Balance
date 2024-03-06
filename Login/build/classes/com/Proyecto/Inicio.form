@@ -220,9 +220,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="BIENVENIDO"/>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="BIENVENIDO"/>
-                  </AccessibilityProperties>
                 </Component>
               </SubComponents>
             </Container>

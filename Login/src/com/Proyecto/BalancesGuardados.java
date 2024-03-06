@@ -29,8 +29,11 @@ int xMouse, yMouse;
         PanelCerrar = new javax.swing.JPanel();
         BotonCerrar = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        buscarText = new javax.swing.JTextField();
         TituloBalance = new javax.swing.JLabel();
+        buscar = new javax.swing.JToggleButton();
         ArchivosBalances = new javax.swing.JLabel();
+        jScrollBar1 = new javax.swing.JScrollBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -82,26 +85,35 @@ int xMouse, yMouse;
             .addComponent(BotonCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        TituloBalance.setBackground(new java.awt.Color(0, 0, 0));
-        TituloBalance.setFont(new java.awt.Font("Arial Black", 0, 48)); // NOI18N
-        TituloBalance.setText("Balances Guardados");
+        buscarText.setText("Buscar...");
+        buscarText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarTextActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(TituloBalance)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(buscarText, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(TituloBalance)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(buscarText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
+
+        TituloBalance.setBackground(new java.awt.Color(0, 0, 0));
+        TituloBalance.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        TituloBalance.setText("Balances Guardados");
+
+        buscar.setText("🔎");
 
         javax.swing.GroupLayout PanelSuperiorTituloLayout = new javax.swing.GroupLayout(PanelSuperiorTitulo);
         PanelSuperiorTitulo.setLayout(PanelSuperiorTituloLayout);
@@ -109,19 +121,30 @@ int xMouse, yMouse;
             PanelSuperiorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
                 .addComponent(PanelCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 773, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSuperiorTituloLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(225, 225, 225)
+                .addComponent(TituloBalance)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
+                .addGap(220, 220, 220)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelSuperiorTituloLayout.setVerticalGroup(
             PanelSuperiorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
-                .addComponent(PanelCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGroup(PanelSuperiorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PanelCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TituloBalance))
+                .addGroup(PanelSuperiorTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelSuperiorTituloLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelBaseLayout = new javax.swing.GroupLayout(PanelBase);
@@ -131,19 +154,24 @@ int xMouse, yMouse;
             .addComponent(PanelSuperiorTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelBaseLayout.createSequentialGroup()
                 .addGap(703, 703, 703)
-                .addComponent(ArchivosBalances, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(ArchivosBalances, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         PanelBaseLayout.setVerticalGroup(
             PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBaseLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(PanelSuperiorTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ArchivosBalances, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                .addGroup(PanelBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ArchivosBalances, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                    .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        getContentPane().add(PanelBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(PanelBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -172,6 +200,10 @@ int xMouse, yMouse;
      xMouse = evt.getX();
      yMouse = evt.getY();
     }//GEN-LAST:event_PanelSuperiorTituloMousePressed
+
+    private void buscarTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscarTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,6 +248,9 @@ int xMouse, yMouse;
     private javax.swing.JPanel PanelCerrar;
     private javax.swing.JPanel PanelSuperiorTitulo;
     private javax.swing.JLabel TituloBalance;
+    private javax.swing.JToggleButton buscar;
+    private javax.swing.JTextField buscarText;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollBar jScrollBar1;
     // End of variables declaration//GEN-END:variables
 }

@@ -248,11 +248,13 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonNuevoActionPerformed
-        // TODO add your handling code here:
+        BalanceGeneralForm newFrame = new BalanceGeneralForm();
+        newFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonNuevoActionPerformed
 
     private void BotonArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonArchivoActionPerformed
-        BalancesGuardados newframe = new BalancesGuardados();
+        BalancesGeneradosForm newframe = new BalancesGeneradosForm();
         newframe.setVisible(true);
         this.dispose();
         

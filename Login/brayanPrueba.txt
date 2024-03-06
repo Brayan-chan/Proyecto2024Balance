@@ -1,0 +1,10 @@
+Nombre de Entidad: bca Enterprise
+Fecha del Balance: 12 de Junio del 2024
+Activos Circulantes: 1000
+Activos Fijos: 10000
+Activos Diferidos: 10
+Pasivos Circulantes: 100
+Pasivos Fijos: 1000
+Pasivos Diferidos: 10
+Nombre del Contador: Brayan
+Nombre del Autorizador: Natahael
